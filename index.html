@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Graph.js Example</title
+    
+	 <!-- Demo CSS  -->
+	<link rel="stylesheet" href="css/demo.css">
+  
+  </head>
+  <body>
+ <header class="intro">
+ <p> <h1>Graph MOdal Using (HTML, CSS, JavaScript) <hr></h1> </p>
+ <div class="action">
+ </div>
+ </header>
+  <main>
+  <article>
+  <p>The following is the example of Graphs. </p>
+
+	<h2>Multiple Data-Sets (Animations/interactivity is optional)</h2>
+	<div id="graph"></div>
+	<br>
+	<br>
+	<hr>
+	<h2>Single Data-Set (And different options)</h2>
+	<div id="graph2"></div>
+	<br>
+	<br>
+	<hr>
+	<h2>Big example without plugin and different options:</h2>
+	<div id="graph3"></div>
+	<br>
+	<br>
+	<br>
+	<hr>
+	
+  </article>
+ </main>
+<footer class="credit">Author: Uriah Sanders - Distributed By:>
+	<a title="Awesome web design code & scripts" href="https://www.codehim.com?source=demo-page" target="_blank">CodeHim</a></footer>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      
+<!-- Graph JS -->
+<script src="js/graph.js"></script>
+  
+      	<script>
+		$(function(){
+			$('#graph').graphify({
+				//options: true,
+				start: 'combo',
+				obj: {
+					id: 'ggg',
+					width: 775,
+					height: 375,
+					xGrid: false,
+					legend: true,
+					title: 'Linux vs Mac',
+					points: [
+						[7, 26, 33, 74, 12, 49, 33],
+						[32, 46, 75, 38, 62, 20, 52]
+					],
+					pointRadius: 3,
+					colors: ['blue', 'red'],
+					xDist: 90,
+					dataNames: ['Linux', 'Mac'],
+					xName: 'Day',
+					tooltipWidth: 15,
+					animations: true,
+					pointAnimation: true,
+					averagePointRadius: 10,
+					design: {
+						tooltipColor: '#fff',
+						gridColor: 'grey',
+						tooltipBoxColor: 'green',
+						averageLineColor: 'green',
+						pointColor: 'green',
+						lineStrokeColor: 'grey',
+					}
+				}
+			});
+			$('#graph2').graphify({
+				start: 'donut',
+				obj: {
+					id: 'lol',
+					legend: false,
+					showPoints: true,
+					width: 775,
+					legendX: 450,
+					pieSize: 200,
+					shadow: true,
+					height: 400,
+					animations: true,
+					x: [2000, 2001, 2002, 2003, 2004, 2005, 2006],
+					points: [17, 33, 64, 22, 87, 45, 38],
+					xDist: 90,
+					scale: 12,
+					yDist: 35,
+					grid: false,
+					xName: 'Year',
+					dataNames: ['Amount'],
+					design: {
+						lineColor: 'red',
+						tooltipFontSize: '20px',
+						pointColor: 'red',
+						barColor: 'blue',
+						areaColor: 'orange'
+					}
+				}
+			});
+			var bar = new GraphBar({
+				attachTo: '#graph3',
+				special: 'combo',
+				height: 725,
+				width: '100%',
+				yDist: 60,
+				xDist: 150,
+				showPoints: false,
+				xGrid: false,
+					legend: true,
+					points: [
+						[17, 21, 51, 74, 12, 49, 33],
+						[32, 15, 75, 20, 45, 90, 52]
+					],
+					colors: ['red', 'orange'],
+					dataNames: ['Hot', 'Warm'],
+					xName: 'Day',
+					tooltipWidth: 15,
+					design: {
+						tooltipColor: '#fff',
+						gridColor: 'black',
+						tooltipBoxColor: 'green',
+						averageLineColor: 'blue',
+					}
+			});
+			bar.init();
+		});
+	</script>
+  </body>
+</html>
